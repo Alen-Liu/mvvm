@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/m_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/main_title"/>
+    <com.example.common.widget.ClearEditText
+        android:id="@+id/m_cet_name_input"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="@string/str_main_input_name_hint"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_15"
+        />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/m_rv_main_func_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/px_20"
+        android:scrollbars="none"
+        android:background="@null"/>
+
+
+</LinearLayout>

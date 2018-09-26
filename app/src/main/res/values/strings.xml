@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">mvvmtest</string>
+    <string name="str_common_dialog_alert_title">提醒</string>
+
+    <!--主页面-->
+    <string name="main_title">展示基本功能项</string>
+    <string name="main_title_message_received">消息收到了</string>
+    <string name="str_main_exit_process_alert">再按一次退出程序</string>
+    <string name="str_main_input_name_hint">请输入用户名</string>
+
+    <!--事件管理页面-->
+    <string name="str_event_page_btn_alert">发送消息</string>
+    <string name="str_event_page_message_send_toast">消息已发送</string>
+
+    <!--食物页面-->
+    <string name="str_food_list_request_fail">请求列表失败</string>
+
+</resources>

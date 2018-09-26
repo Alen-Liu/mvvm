@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/m_tv_item_food_type_name"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/px_10"
+    android:textSize="@dimen/sp_18"
+    android:textColor="@color/black"
+    android:singleLine="true"
+    android:ellipsize="end"/>

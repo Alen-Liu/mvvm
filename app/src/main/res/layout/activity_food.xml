@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/m_rv_food_type_list"
+        android:layout_width="@dimen/px_300"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:background="@null"/>
+
+    <com.example.common.irecyclerview.IRecyclerView
+        android:id="@+id/m_rv_food_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:scrollbars="none"
+        app:loadMoreEnabled="true"
+        app:refreshEnabled="true"
+        app:refreshHeaderLayout="@layout/layout_irecyclerview_classic_refresh_header_view"
+        app:loadMoreFooterLayout="@layout/layout_irecyclerview_load_more_footer_view" />
+</LinearLayout>
