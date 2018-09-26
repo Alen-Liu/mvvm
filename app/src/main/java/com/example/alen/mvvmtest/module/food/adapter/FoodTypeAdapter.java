@@ -83,8 +83,8 @@ public class FoodTypeAdapter extends RecyclerView.Adapter {
     }
 
     public int getSelectedCId(){
-        if(getItem(mLastPos) != null) {
-            return getItem(mLastPos).getType();
+        if(getItem(mLastPos) != null && getItem(mLastPos).getType() == FoodTypeListBean.TYPE_ITEM) {
+            return Integer.parseInt(getItem(mLastPos).getId());
         }
         return 0;
     }
