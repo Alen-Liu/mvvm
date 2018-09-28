@@ -31,14 +31,22 @@ import dagger.android.support.DaggerAppCompatActivity;
  * 9. 通用Toast，通用Dialog，通用ClearEdit，通用Loading； 通用工具最好放在common包里面，防止功能代码分module之后，循环依赖
  * 10. 通用WebView   SafeWebView.java （也可以使用腾讯的TBS）
  * 11. 带下拉刷新和上滑加载的RecyclerView
+ * 12. 尽量使用 ConstraintLayout 进行页面布局
+ *
+ *
+ * 项目收尾阶段需要：
+ * 1.考虑卡顿和过度绘制问题
+ * 2. 使用lint检查代码
+ * 3. 添加leak检查，检查内存泄漏
+ * 4. 清理无用的代码
+ * 5. 进行操作埋点和异常上报
+ *
  * 接下来需要考量：
- * 1.使用lint检查代码
- * 2.内存泄漏leak检查
- * 2.埋点
  * 3.单元测试
- * 4.混淆
+ * 4.混 淆
  * 5.加固
  * 6.热更新
+ * 7. 上传到maven
  */
 
 public class MyApplication extends MultiDexApplication implements HasActivityInjector, HasServiceInjector {
