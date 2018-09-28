@@ -7,6 +7,8 @@ import android.support.multidex.MultiDexApplication;
 
 import com.example.alen.mvvmtest.event.EventCenterManager;
 import com.example.common.CommonContext;
+import com.squareup.leakcanary.LeakCanary;
+import com.squareup.leakcanary.RefWatcher;
 
 import javax.inject.Inject;
 
@@ -32,12 +34,12 @@ import dagger.android.support.DaggerAppCompatActivity;
  * 10. 通用WebView   SafeWebView.java （也可以使用腾讯的TBS）
  * 11. 带下拉刷新和上滑加载的RecyclerView
  * 12. 尽量使用 ConstraintLayout 进行页面布局
- *
+ * 13. 添加leak检查，检查内存泄漏
  *
  * 项目收尾阶段需要：
  * 1.考虑卡顿和过度绘制问题
  * 2. 使用lint检查代码
- * 3. 添加leak检查，检查内存泄漏
+ * 3.
  * 4. 清理无用的代码
  * 5. 进行操作埋点和异常上报
  *
@@ -57,6 +59,14 @@ public class MyApplication extends MultiDexApplication implements HasActivityInj
     DispatchingAndroidInjector<Service> dispatchingServiceInjector;
 
     public static Context mContext;
+
+    private RefWatcher refWatcher;
+
+    public static RefWatcher getRefWatcher(Context context) {
+        MyApplication application = (MyApplication) context.getApplicationContext();
+        return application.refWatcher;
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -70,6 +80,13 @@ public class MyApplication extends MultiDexApplication implements HasActivityInj
                 .application(this)
                 .build()
                 .inject(this);
+        //注册Leak
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            //这个进程专门给LeakCanary来作内存分析的，不要在这里做初始化app的事情
+            return;
+        }
+        refWatcher = LeakCanary.install(this);
+
     }
 
     @Override

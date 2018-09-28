@@ -36,6 +36,10 @@ dependencies {
     api "com.jakewharton:butterknife:$butterknife"
     annotationProcessor "com.jakewharton:butterknife-compiler:$butterknife"
 
+    //LeakCanary
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+
     // Retrofit  RxJava dagger2
     api 'com.google.protobuf:protobuf-lite:3.0.0'
     api "com.squareup.retrofit2:retrofit:$retrofit2"
