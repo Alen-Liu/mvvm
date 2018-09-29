@@ -36,17 +36,16 @@ import dagger.android.support.DaggerAppCompatActivity;
  * 12. 尽量使用 ConstraintLayout 进行页面布局
  * 13. 添加leak检查，检查内存泄漏
  * 14. 开发阶段就对debug开启混淆，这样会更全面的排查 混淆对代码的影响。避免深路径的混淆对功能的影响
- *
+ * 15. 屏幕适配:https://github.com/JessYanCoding/AndroidAutoSize
  * 项目收尾阶段需要：
  * 1. 考虑卡顿和过度绘制问题
  * 2. 使用lint检查代码
  * 3. 清理无用的代码
  * 4. 进行操作埋点和异常上报
- * 5.
- *
+ * 5. 加固
+ * 6. 热更新
  * 接下来需要考量：
  * 3. 单元测试
- * 4. 混 淆
  * 5. 加固
  * 6. 热更新
  * 7. 上传到maven
