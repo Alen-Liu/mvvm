@@ -4,7 +4,7 @@ android {
     compileSdkVersion 27
 
     defaultConfig {
-        minSdkVersion 15
+        minSdkVersion 18
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -35,6 +35,9 @@ dependencies {
     //butterKnife 支持
     api "com.jakewharton:butterknife:$butterknife"
     annotationProcessor "com.jakewharton:butterknife-compiler:$butterknife"
+
+    //Android Util
+    api 'com.blankj:utilcode:1.9.8'
 
     //LeakCanary
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'

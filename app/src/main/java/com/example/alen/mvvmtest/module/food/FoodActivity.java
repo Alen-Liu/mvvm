@@ -9,6 +9,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.blankj.utilcode.util.TimeUtils;
 import com.example.alen.mvvmtest.MyBaseActivity;
 import com.example.alen.mvvmtest.R;
 import com.example.alen.mvvmtest.module.food.adapter.FoodAdapter;

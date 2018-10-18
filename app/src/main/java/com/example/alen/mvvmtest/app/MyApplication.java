@@ -5,6 +5,7 @@ import android.app.Service;
 import android.content.Context;
 import android.support.multidex.MultiDexApplication;
 
+import com.blankj.utilcode.util.Utils;
 import com.example.alen.mvvmtest.event.EventCenterManager;
 import com.example.common.CommonContext;
 import com.squareup.leakcanary.LeakCanary;
@@ -16,7 +17,6 @@ import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
 import dagger.android.HasServiceInjector;
-import dagger.android.support.DaggerAppCompatActivity;
 
 /**
  * @author 刘伦
@@ -37,6 +37,7 @@ import dagger.android.support.DaggerAppCompatActivity;
  * 13. 添加leak检查，检查内存泄漏
  * 14. 开发阶段就对debug开启混淆，这样会更全面的排查 混淆对代码的影响。避免深路径的混淆对功能的影响
  * 15. 屏幕适配:https://github.com/JessYanCoding/AndroidAutoSize
+ * 16. https://github.com/Blankj/AndroidUtilCode 使用通用Utils， 防止重复造轮子
  * 项目收尾阶段需要：
  * 1. 考虑卡顿和过度绘制问题
  * 2. 使用lint检查代码
@@ -46,8 +47,6 @@ import dagger.android.support.DaggerAppCompatActivity;
  * 6. 热更新
  * 接下来需要考量：
  * 3. 单元测试
- * 5. 加固
- * 6. 热更新
  * 7. 上传到maven
  */
 
@@ -73,6 +72,8 @@ public class MyApplication extends MultiDexApplication implements HasActivityInj
         mContext = this;
         // 初始化common的包
         CommonContext.setAppContext(this);
+        //通用的Utils
+        Utils.init(this);
         // 初始化监听
         EventCenterManager.initEventCenterManager();
         // 注册component
